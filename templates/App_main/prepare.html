@@ -1,0 +1,472 @@
+{% extends 'Reel_Life/base.html' %}
+{% load static %}
+{% block title %}
+    Prepare
+{% endblock %}
+{% block body %}
+    <style>
+        {#button#}
+
+        html {
+            font-family: "Open Sans", sans-serif;
+        }
+
+        h1 {
+            color: #444;
+        }
+
+        .btn {
+            padding: 1em 2.1em 1.1em;
+            border-radius: 3px;
+            margin: 8px 8px 8px 8px;
+            color: #fbdedb;
+            background-color: #fbdedb;
+            display: inline-block;
+            background: #f55757;;
+            -webkit-transition: 0.3s;
+            -moz-transition: 0.3s;
+            -o-transition: 0.3s;
+            transition: 0.3s;
+            font-family: sans-serif;
+            font-weight: 800;
+            font-size: .85em;
+            text-transform: uppercase;
+            text-align: center;
+            text-decoration: none;
+            -webkit-box-shadow: 0em -0.3rem 0em rgba(0, 0, 0, 0.1) inset;
+            -moz-box-shadow: 0em -0.3rem 0em rgba(0, 0, 0, 0.1) inset;
+            box-shadow: 0em -0.3rem 0em rgba(0, 0, 0, 0.1) inset;
+            position: relative;
+        }
+
+        .btn:hover, .btn:focus {
+            color: white;
+            font-family: Calibri;
+        }
+
+        .btn:active {
+            -webkit-transform: scale(0.80);
+            -moz-transform: scale(0.80);
+            -ms-transform: scale(0.80);
+            -o-transform: scale(0.80);
+            transform: scale(0.80);
+        }
+
+        .btn.block {
+            display: block !important;
+        }
+
+        .btn.circular {
+            border-radius: 50em !important;
+        }
+
+        {#button_end#}
+
+        HTML CSSResult Skip Results Iframe
+        .wrapper {
+            display: block;
+            margin: 50px auto 50px;
+            max-width: 1170px;
+        }
+
+        .box {
+            border-radius: 5px;
+            background: aliceblue;
+        }
+
+        .box h1, .box h2, .box h3 {
+            text-align: center;
+            font-size: 26px;
+            color: #FFF;
+            margin: 0 10px 0 10px;
+            position: relative;
+            top: -20px;
+            border-radius: 5px;
+            padding: 5px;
+            font-family: cursive;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+        }
+
+        .wrapper > h1 {
+            text-align: center;
+            font-family: cursive;
+            margin-bottom: 2.5em;
+            {#text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #795548, 0 0 30px #795548, 0 0 40px #795548, 0 0 55px #795548, 0 0 75px #795548, -40px -40px 0px rgba(28, 110, 164, 0);#}
+        }
+
+        h1 span {
+            color: #0970f8;
+        }
+
+        h1 span:nth-child(2) {
+            color: #fd5263;
+        }
+
+        h1 span:nth-child(3) {
+            color: #a90e0e;
+        }
+
+        h1 span:last-child {
+            color: #7983f8;
+        }
+
+        .flexbox .box {
+            border: 1px solid #34c5e4;
+        }
+
+        .flexbox .box:nth-child(2) {
+            border: 1px solid #f90;
+        }
+
+        .flexbox .box:last-child {
+            border: 1px solid #a7c;
+        }
+
+        .box h1 {
+            background: linear-gradient(38deg, #ff6da2, #7983f8);
+        }
+
+        .box h2 {
+            background: linear-gradient(38deg, #ffe74f, #fd5263);
+        }
+
+        .box h3 {
+            background: linear-gradient(38deg, #2196fd, #04ffb4);
+        }
+
+        .box p {
+            text-align: center;
+            padding: 10px 0;
+            font-size: 18px;
+            color: #a7c;
+            margin: 0;
+        }
+
+        .box .first {
+            color: #a7c;
+        }
+
+        .box .second {
+            color: #f90;
+        }
+
+        .box .third {
+            color: #34c5e4;
+        }
+
+        .box span {
+            display: block;
+            text-align: center;
+            color: #a7c;
+            font-size: 53px;
+            margin-bottom: 5px;
+        }
+
+        .flexbox {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 50px 15px;
+            justify-content: center;
+        }
+
+        .flexbox .box {
+            width: 280px;
+            /* height: 230px;
+            */
+            box-sizing: border-box;
+            margin: 0 15px;
+            margin-bottom: 5em;
+            position: relative;
+        }
+
+        .flexbox .box:after {
+            pointer-events: none;
+            position: absolute;
+            z-index: -1;
+            content: '';
+            bottom: -10%;
+            left: 5%;
+            height: 20px;
+            width: 90%;
+        {#background: -webkit-radial-gradient(center, ellipse, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 80%);#} background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 80%);
+        }
+
+        .contents {
+            text-align: justify !important;
+            padding: 15px 15px !important;
+            font-size: 15px !important;
+        }
+
+        .scrollbar {
+            height: 200px;
+            overflow-y: auto;
+            scroll-behavior: smooth;
+        }
+
+        #content-scroll::-webkit-scrollbar {
+            width: 10px;
+            background-color: #F5F5F5;
+        }
+
+        #content-scroll::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            background-color: #FFF;
+            background-image: -webkit-gradient(linear, 40% 0%, 75% 84%, from(#04ffb4), to(#2196fd), color-stop(.6, #2196fd));
+        }
+
+        #content-scroll1::-webkit-scrollbar {
+            width: 10px;
+            background-color: #F5F5F5;
+        }
+
+        #content-scroll1::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            background-color: #FFF;
+            background-image: -webkit-gradient(linear, 40% 0%, 75% 84%, from(#fd5263), to(#ffe74f), color-stop(.6, #ffe74f));
+        }
+
+        #content-scroll2::-webkit-scrollbar {
+            width: 10px;
+            background-color: #F5F5F5;
+        }
+
+        #content-scroll2::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            background-color: #FFF;
+            background-image: -webkit-gradient(linear, 40% 0%, 75% 84%, from(#ff6da2), to(#7983f8), color-stop(.6, #7983f8));
+        }
+
+
+    </style>
+    <div class="">
+        {% if messages %}
+            <ul class="messages" style="background-color:#fab1b1; text-align: center">
+                {% for message in messages %}
+                    {{ message }}
+                {% endfor %}
+            </ul>
+        {% endif %}
+        <div class="row">
+            <div class="col-md-12 main_div">
+                {#                start#}
+                <div class="wrapper">
+                    <h1><span>Bun</span><span> - </span><span>must choose </span><span>one</span></h1>
+                    <div class="flexbox">
+                        {% for item in ingredients_bun %}
+                            <div class="box">
+
+                                <h2>{{ item.item }}</h2>
+                                <div class="scrollbar" id="content-scroll1">
+                                    <span class="second"><img src="{{ item.image.url }}" alt="item" height="150px"
+                                                              width="180px"></span>
+
+
+                                </div>
+                                <p><a value="{{ item.id }}" id="a-{{ item.id }}" class="btn block">Add</a></p>
+                                <script>
+                                    document.getElementById('a-{{ item.id }}').addEventListener("click", input_add);
+                                    function input_add() {
+                                        let p_id = document.getElementById('all-ids')
+                                        if(document.getElementById('in-{{ item.id }}')){
+                                            p_id.innerText = p_id.innerText.replace(/{{ item.id }},/g,"");
+                                            document.getElementById('in-{{ item.id }}').remove();
+                                            document.getElementById("a-{{ item.id }}").innerHTML = "Add";
+                                            let val = document.getElementById('all-ids');
+                                            document.getElementById('list').value = val.innerText;
+                                        }
+                                        else{
+                                            document.getElementById("a-{{ item.id }}").innerHTML = "Remove";
+                                            p_id.innerText += "{{ item.id }}, ";
+                                            document.getElementById("hidden").innerHTML += "<input type='hidden' name='{{ item.id }}' id='in-{{ item.id }}' value='{{ item.id }}'>";
+                                            let val = document.getElementById('all-ids');
+                                            document.getElementById('list').value = val.innerText;
+                                        }
+                                    }
+                                </script>
+                            </div>
+                        {% endfor %}
+                    </div>
+
+                </div>
+{#                /////////////////////////////////////////////////////#}
+                <div class="wrapper">
+                    <h1><span>Patty</span><span> - </span><span>must choose </span><span>one</span></h1>
+                    <div class="flexbox">
+                        {% for item in ingredients_patty %}
+                            <div class="box">
+
+                                <h2>{{ item.item }}</h2>
+                                <div class="scrollbar" id="content-scroll1">
+                                    <span class="second"><img src="{{ item.image.url }}" alt="item" height="150px"
+                                                              width="180px"></span>
+
+
+                                </div>
+                                <p><a value="{{ item.id }}" id="a-{{ item.id }}" class="btn block">Add</a></p>
+                                <script>
+                                    document.getElementById('a-{{ item.id }}').addEventListener("click", input_add);
+                                    function input_add() {
+                                        let p_id = document.getElementById('all-ids')
+                                        if(document.getElementById('in-{{ item.id }}')){
+                                            p_id.innerText = p_id.innerText.replace(/{{ item.id }},/g,"");
+                                            document.getElementById('in-{{ item.id }}').remove();
+                                            document.getElementById("a-{{ item.id }}").innerHTML = "Add";
+                                            let val = document.getElementById('all-ids');
+                                            document.getElementById('list').value = val.innerText;
+                                        }
+                                        else{
+                                            document.getElementById("a-{{ item.id }}").innerHTML = "Remove";
+                                            p_id.innerText += "{{ item.id }}, ";
+                                            document.getElementById("hidden").innerHTML += "<input type='hidden' name='{{ item.id }}' id='in-{{ item.id }}' value='{{ item.id }}'>";
+                                            let val = document.getElementById('all-ids');
+                                            document.getElementById('list').value = val.innerText;
+                                        }
+                                    }
+                                </script>
+                            </div>
+                        {% endfor %}
+                    </div>
+
+                </div>
+ {#                /////////////////////////////////////////////////////#}
+                <div class="wrapper">
+                    <h1><span>Sauces</span><span> - </span><span>along with </span><span>Mayo</span></h1>
+                    <div class="flexbox">
+                        {% for item in ingredients_sauce %}
+                            <div class="box">
+
+                                <h2>{{ item.item }}</h2>
+                                <div class="scrollbar" id="content-scroll1">
+                                    <span class="second"><img src="{{ item.image.url }}" alt="item" height="150px"
+                                                              width="180px"></span>
+
+
+                                </div>
+                                <p><a value="{{ item.id }}" id="a-{{ item.id }}" class="btn block">Add</a></p>
+                                <script>
+                                    document.getElementById('a-{{ item.id }}').addEventListener("click", input_add);
+                                    function input_add() {
+                                        let p_id = document.getElementById('all-ids')
+                                        if(document.getElementById('in-{{ item.id }}')){
+                                            p_id.innerText = p_id.innerText.replace(/{{ item.id }},/g,"");
+                                            document.getElementById('in-{{ item.id }}').remove();
+                                            document.getElementById("a-{{ item.id }}").innerHTML = "Add";
+                                            let val = document.getElementById('all-ids');
+                                            document.getElementById('list').value = val.innerText;
+                                        }
+                                        else{
+                                            document.getElementById("a-{{ item.id }}").innerHTML = "Remove";
+                                            p_id.innerText += "{{ item.id }}, ";
+                                            document.getElementById("hidden").innerHTML += "<input type='hidden' name='{{ item.id }}' id='in-{{ item.id }}' value='{{ item.id }}'>";
+                                            let val = document.getElementById('all-ids');
+                                            document.getElementById('list').value = val.innerText;
+                                        }
+                                    }
+                                </script>
+                            </div>
+                        {% endfor %}
+                    </div>
+
+                </div>
+{#                /////////////////////////////////////////////////////#}
+                <div class="wrapper">
+                    <h1><span>Vegitables</span><span> - </span><span>As your </span><span>Wish</span></h1>
+                    <div class="flexbox">
+                        {% for item in ingredients_veg %}
+                            <div class="box">
+
+                                <h2>{{ item.item }}</h2>
+                                <div class="scrollbar" id="content-scroll1">
+                                    <span class="second"><img src="{{ item.image.url }}" alt="item" height="150px"
+                                                              width="180px"></span>
+
+
+                                </div>
+                                <p><a value="{{ item.id }}" id="a-{{ item.id }}" class="btn block">Add</a></p>
+                                <script>
+                                    document.getElementById('a-{{ item.id }}').addEventListener("click", input_add);
+                                    function input_add() {
+                                        let p_id = document.getElementById('all-ids')
+                                        if(document.getElementById('in-{{ item.id }}')){
+                                            p_id.innerText = p_id.innerText.replace(/{{ item.id }},/g,"");
+                                            document.getElementById('in-{{ item.id }}').remove();
+                                            document.getElementById("a-{{ item.id }}").innerHTML = "Add";
+                                            let val = document.getElementById('all-ids');
+                                            document.getElementById('list').value = val.innerText;
+                                        }
+                                        else{
+                                            document.getElementById("a-{{ item.id }}").innerHTML = "Remove";
+                                            p_id.innerText += "{{ item.id }}, ";
+                                            document.getElementById("hidden").innerHTML += "<input type='hidden' name='{{ item.id }}' id='in-{{ item.id }}' value='{{ item.id }}'>";
+                                            let val = document.getElementById('all-ids');
+                                            document.getElementById('list').value = val.innerText;
+                                        }
+                                    }
+                                </script>
+                            </div>
+                        {% endfor %}
+                    </div>
+
+                </div>
+{#                /////////////////////////////////////////////////////#}
+                <div class="wrapper">
+                    <h1><span>Add-ons</span><span> - </span><span>As your </span><span>Wish</span></h1>
+                    <div class="flexbox">
+                        {% for item in ingredients_addon %}
+                            <div class="box">
+
+                                <h2>{{ item.item }}</h2>
+                                <div class="scrollbar" id="content-scroll1">
+                                    <span class="second"><img src="{{ item.image.url }}" alt="item" height="150px"
+                                                              width="180px"></span>
+
+
+                                </div>
+                                <p><a value="{{ item.id }}" id="a-{{ item.id }}" class="btn block">Add</a></p>
+                                <script>
+                                    document.getElementById('a-{{ item.id }}').addEventListener("click", input_add);
+                                    function input_add() {
+                                        let p_id = document.getElementById('all-ids')
+                                        if(document.getElementById('in-{{ item.id }}')){
+                                            p_id.innerText = p_id.innerText.replace(/{{ item.id }},/g,"");
+                                            document.getElementById('in-{{ item.id }}').remove();
+                                            document.getElementById("a-{{ item.id }}").innerHTML = "Add";
+                                            let val = document.getElementById('all-ids');
+                                            document.getElementById('list').value = val.innerText;
+                                        }
+                                        else{
+                                            document.getElementById("a-{{ item.id }}").innerHTML = "Remove";
+                                            p_id.innerText += "{{ item.id }}, ";
+                                            document.getElementById("hidden").innerHTML += "<input type='hidden' name='{{ item.id }}' id='in-{{ item.id }}' value='{{ item.id }}'>";
+                                            let val = document.getElementById('all-ids');
+                                            document.getElementById('list').value = val.innerText;
+                                        }
+                                    }
+                                </script>
+                            </div>
+                        {% endfor %}
+                    </div>
+
+                </div>
+{#                /////////////////////////////////////////////////////#}
+
+
+
+
+                {#                end#}
+            </div>
+        </div>
+    </div>
+    <form method="post" class="form-group">
+    {% csrf_token %}
+        <p id="all-ids" style="display: none"></p>
+        <div style="display: none">
+            <fieldset class="form-group" id="hidden">
+                <input type="text" value="" name="all_ids" id="list">
+            </fieldset>
+        </div>
+        <div class="form-group">
+            <button style="width: 100%" type="submit" class="btn block">Add to Cart</button>
+        </div>
+    </form>
+{% endblock %}

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+          integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Reggae+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas&family=Reggae+One&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="#" type="text/css">
+    <title>Toppings - eat what you like
+        {% block title %}
+        {% endblock %}</title>
+    <style>
+        .navbar {
+            background-color: white !important;
+        }
+
+        .navbar-brand {
+            font-family: 'Dancing Script', cursive;
+            font-weight: 700;
+        }
+
+        .nav-link {
+            font-family: 'Dancing Script', cursive;
+            font-weight: 700;
+            font-size: 22px;
+            color: #800f1b !important;
+        }
+
+        .nav-link:hover {
+            font-family: 'Reggae One', cursive;
+            color: #610202 !important;
+            font-size: 14px !important;
+            border-bottom: 1px solid #070000 !important;
+            border-top: 1px solid #070000 !important;
+        }
+
+        {#cart#}
+        #ex4 .p1[data-count]:after {
+            position: absolute;
+            right: 10%;
+            top: 8%;
+            content: attr(data-count);
+            font-size: 16px;
+            padding: .2em;
+            border-radius: 50%;
+            border: 1px solid darkred;
+            line-height: 1em;
+            color: #7c0404;
+            background: rgb(255, 255, 255);
+            text-align: center;
+            min-width: 1em;
+            font-weight: bold;
+        }
+
+    </style>
+
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="{% url 'App_main:home' %}"><h1><span>-</span><span
+            style="color: #d53311">Khai</span><span
+            style="color: #800f1b">Dai</span><span>-</span></h1>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" style="float: right">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto" style="margin-top: 20px; margin-bottom: 0">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'App_main:home' %}">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">My-Orders</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Reviews</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'App_login:logout' %}">Log-Out</a>
+            </li>
+        </ul>
+        <ul>
+            <a style="text-decoration: none; color: black" href="{% url 'App_main:cart' %}">
+                <div id="ex4">
+                      <span class="p1 fa-stack fa-2x has-badge" data-count="{{ my_cart }}">
+                            <i class="p3 fa fa-shopping-cart fa-stack-1x xfa-inverse" data-count="4b"></i>
+                      </span>
+                </div>
+            </a>
+        </ul>
+    </div>
+</nav>
+<hr>
+
+
+{% block body %}
+{% endblock %}
+<script type="text/javascript">
+    setInterval(function () {
+        document.getElementById('this_time').innerText = "{{ time }}";
+    }, 1000);
+</script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"
+        integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF"
+        crossorigin="anonymous"></script>
+
+</body>
+</html>
